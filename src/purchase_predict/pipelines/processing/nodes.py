@@ -5,6 +5,7 @@ from typing import Dict, Any
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
+
 def encode_features(dataset: pd.DataFrame) -> pd.DataFrame:
     """
     Encode features of data file.
@@ -16,12 +17,15 @@ def encode_features(dataset: pd.DataFrame) -> pd.DataFrame:
         features[label] = features[label].astype(str)
         features.loc[features[label] == "nan", label] = "unknown"
         encoder = LabelEncoder()
-        features[label] = encoder.fit_transform(features.loc[:, label].copy()).astype(str)
+        features[label] = encoder.fit_transform(features.loc[:, label].copy()).astype(
+            str
+        )
         features[label] = features[label].astype(int)
         encoders.append((label, encoder))
 
     features["weekday"] = features["weekday"].astype(int)
     return dict(features=features, transform_pipeline=encoders)
+
 
 def split_dataset(dataset: pd.DataFrame, test_ratio: float) -> Dict[str, Any]:
     """
