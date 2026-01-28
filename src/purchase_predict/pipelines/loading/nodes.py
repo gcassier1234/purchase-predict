@@ -28,3 +28,5 @@ def load_csv_from_bucket(project: str, bucket_path: str) -> pd.DataFrame:
 
     df = pd.concat(li, axis=0, ignore_index=True)
     return df
+
+fafafafa
