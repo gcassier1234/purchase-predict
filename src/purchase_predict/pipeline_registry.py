@@ -20,4 +20,5 @@ def register_pipelines() -> dict[str, Pipeline]:
     pipelines["processing"] = processing_pipeline.create_pipeline()
     pipelines["training"] = training_pipeline.create_pipeline()
     pipelines["loading"] = loading_pipeline.create_pipeline()
+    pipelines["global"] = Pipeline([pipelines["loading"], pipelines["processing"], pipelines["training"]])
     return pipelines
