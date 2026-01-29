@@ -55,3 +55,16 @@ source_dir = "src"
 
 [tool.kedro_telemetry]
 project_id = "c680fa0c88f84b9889f5e1f24e476813"
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | venv
+  | build
+  | dist
+  |conf
+)/
+'''

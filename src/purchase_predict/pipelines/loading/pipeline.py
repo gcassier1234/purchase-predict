@@ -3,12 +3,11 @@ from .nodes import load_csv_from_bucket
 
 
 def create_pipeline(**kwargs):
-    Pipeline(
+    return Pipeline(
         [
             node(
-                load_csv_from_bucket[
-                    "params:gcp_project_id", "params:gcs_primary_folder"
-                ],
+                load_csv_from_bucket,
+                ["params:gcp_project_id", "params:gcs_primary_folder"],
                 "primary",
             )
         ]
