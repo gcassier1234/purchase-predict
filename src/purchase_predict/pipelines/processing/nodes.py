@@ -17,9 +17,7 @@ def encode_features(dataset: pd.DataFrame) -> pd.DataFrame:
         features[label] = features[label].astype(str)
         features.loc[features[label] == "nan", label] = "unknown"
         encoder = LabelEncoder()
-        features[label] = encoder.fit_transform(features.loc[:, label].copy()).astype(
-            str
-        )
+        features[label] = encoder.fit_transform(features.loc[:, label].copy()).astype(str)
         features[label] = features[label].astype(int)
         encoders.append((label, encoder))
 
@@ -34,8 +32,6 @@ def split_dataset(dataset: pd.DataFrame, test_ratio: float) -> Dict[str, Any]:
     X = dataset.drop("purchased", axis=1)
     y = dataset["purchased"]
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=test_ratio, random_state=40
-    )
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_ratio, random_state=40)
 
     return dict(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)

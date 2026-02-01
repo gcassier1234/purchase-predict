@@ -9,8 +9,7 @@ def test_pipeline(catalog_test):
     runner = SequentialRunner()
     pipeline = create_pipeline()
     runner.run(pipeline, catalog_test)
-    # df = pipeline_output["primary"]
     df = catalog_test.load("primary")
-    assert isinstance(type(df), pd.DataFrame)
+    assert isinstance(df, pd.DataFrame)
     assert df.shape[1] == 16
     assert "purchased" in df
