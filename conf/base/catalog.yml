@@ -34,4 +34,4 @@ model:
 
 transform_pipeline:
   type: pickle.PickleDataset
-  filepath: fata/04_feature/transform_pipeline.pkl
+  filepath: data/04_feature/transform_pipeline.pkl
