@@ -17,4 +17,4 @@ def stage_model(registry_name: str, version: int):
         return
 
     client = MlflowClient()
-    client.set_registered_model_alias(name=registry_name, alis=env, version=str(version))
+    client.set_registered_model_alias(name=registry_name, alias=env, version=str(version))
