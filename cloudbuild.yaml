@@ -1,5 +1,5 @@
 options:
-  logging: REGIONAL_USER_OWNED_BUCKET
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
 steps:
  - name: "docker.io/library/python:3.13"
