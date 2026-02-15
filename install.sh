@@ -1,4 +1,4 @@
 pip install --upgrade pip
 pip install -r requirements.txt
-pip install --upgrade setuptools
+sudo apt install python3-setuptools
 pip install .
