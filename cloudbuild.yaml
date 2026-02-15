@@ -8,3 +8,12 @@ steps:
    args:
    - -c
    - "chmod a+x install.sh && ./install.sh && pytest" 
+ - name: "docker.io/library/python:3.13"
+   id: CD
+   entrypoint: /bin/sh
+   args:
+   - -c
+   - "chmod a+x install.sh && ./install.sh && kedro run --pipeline global"
+   env:
+   - 'ENV=$BRANCH_NAME'
+   - 'MLFLOW_SERVER=$_MLFLWO_SERVER'
