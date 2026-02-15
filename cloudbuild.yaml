@@ -16,4 +16,4 @@ steps:
    - "chmod a+x install.sh && ./install.sh && kedro run --pipeline global"
    env:
    - 'ENV=$BRANCH_NAME'
-   - 'MLFLOW_SERVER=$_MLFLWO_SERVER'
+   - 'MLFLOW_SERVER=$_MLFLOW_SERVER'
